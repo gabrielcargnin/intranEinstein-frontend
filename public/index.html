@@ -1,36 +1,81 @@
 <!DOCTYPE html>
-<html ng-app="intranEinstein">
+<html lang="pt-br" ng-app="intranet">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema do Aluno</title>
     <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-
-    <!-- Angular -->
-    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
-    <script type="text/javascript" src="../node_modules/angular-route/angular-route.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script>
+    <script src="../node_modules/angular-resource/angular-resource.js"></script>
+    <script src="../node_modules/angular-storage/dist/angular-storage.js"></script>
+    <script src="../bower_components/angular-route-styles/route-styles.js"></script>
 
     <!-- App -->
-    <script type="text/javascript" src="app/app.js"></script>
-</head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<body>
-<div class="container">
-    <div class="login-box">
-        <form class="login-form">
-            <img src="images/cropped-icon-for-site-470x470.png" alt="Einstein Floripa Logo" />
-            <input class="input-text" type="text" id="cpf" required>
-            <span class="floating-label">CPF</span>
+    <script src="js/main.js"></script>
+    <!--Service-->
+    <script src="../public/js/services/acesso-service.js"></script>
+    <script src="../public/js/services/livro-service.js"></script>
+    <script src="../public/js/services/simulado-service.js"></script>
+    <script src="../public/js/services/usuario-service.js"></script>
+    <script src="../public/js/interceptor/auth-interceptor.js"></script>
+    <!--Controllers-->
+    <script src="../public/js/controllers/acesso-controller.js"></script>
+    <script src="../public/js/controllers/livro-controller.js"></script>
+    <script src="../public/js/controllers/livros-controller.js"></script>
+    <script src="../public/js/controllers/simulado-controller.js"></script>
+    <script src="../public/js/controllers/simulados-controller.js"></script>
+    <script src="../public/js/controllers/usuario-controller.js"></script>
+    <script src="../public/js/controllers/usuarios-controller.js"></script>
+    <!-- Angular -->
 
-            <input class="input-text" type="text" id="email" required>
-            <span class="floating-label">Email</span>
-            <div class="form-group text-center">
-                <span><a href="">Esqueci minha senha</a></span>
-            </div>
-            <button type="submit" class="btn">Entrar</button>
-        </form>
-    </div>
-</div>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#/atestado-matricula">Atestado de Matrícula</a></li>
+                <li><a href="#/horarios">Horários</a></li>
+                <li><a href="#/simulados">Simulados</a></li>
+                <li><a href="#/embaixada-amor">Embaixada do Amor</a></li>
+                <li><a href="#/biblioteca">BibliotecEinstein</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/trocar-senha">Trocar Senha</a></li>
+                        <li><a href="#/meus-dados">Meus Dados</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#/sair">Sair</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<ng-view></ng-view>
+<footer class="text-center">
+    <p>Einstein Floripa Vestibulares</p>
+    <span>Produzido por Hollywood e Desenvolvido pela Matrix</span>
+</footer>
 </body>
 </html>

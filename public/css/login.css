@@ -4,6 +4,10 @@ html, body {
     color: #357fb2;
 }
 
+nav, footer {
+    display: none;
+}
+
 .login-box {
     position: absolute;
     width: 80%;
@@ -12,11 +16,12 @@ html, body {
     transform: translate(-50%, -50%);
 }
 
-button {
+.btn {
     width: 100%;
     text-transform: uppercase;
     background-color: #367fb3;
     color: #ffffff;
+    font-weight: bold;
 
 }
 
@@ -74,6 +79,12 @@ img {
     transform: translate(-50%, 0);
 }
 
+.fa {
+    margin-left: -12px;
+    margin-right: 8px;
+}
+
+
 @media (min-width: 768px ) {
     html, body {
         background: none;
@@ -88,6 +99,11 @@ img {
     .login-form {
         padding: 7%;
     }
+}
+
+.errors{
+    color: #ff7100;
+    font-size: 12px;
 }
 
 @media (min-width: 1000px) {
@@ -135,7 +151,7 @@ img {
         padding-left: 300px;
     }
 
-    button {
+    .btn {
         background-color: white;
         color: black;
     }
@@ -144,6 +160,33 @@ img {
         color: white;
     }
 
+    .mensagem-erro {
+        position: absolute;
+        margin-top: 120px;
+        right: 100%;
+        animation: mensagem 7s;
+        width: 400px;
+        /*animation-name: mensagem;*/
+        /*animation-duration: 5s;*/
+    }
+
+    @keyframes mensagem {
+        8% {
+            right: 50%;
+            transform: translate(50%, 0);
+        }
+
+        50% {
+            right: 50%;
+            transform: translate(50%, 0);
+        }
+
+        60% {
+            right: 100%;
+            transform: translate(0, 0);
+        }
+    }
+
+
+
 }
-
-
