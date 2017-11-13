@@ -1,16 +1,17 @@
-<h2>BibliotecEinstein</h2>
-<p>Bem-vindo à Biblioteca, jovem Einsteiniano!</p>
+<div class="container">
+    <h2>BibliotecEinstein</h2>
+    <p>Bem-vindo à Biblioteca, jovem Einsteiniano!</p>
 
-<h4>Meus Empréstimos</h4>
-<table class="table" ng-if="livros">
-    <thead>
-    <td>#</td>
-    <td>Autor</td>
-    <td>Título</td>
-    <td>Data de Empréstimo</td>
-    <td>Data de Devolução</td>
-    </thead>
-    <tbody>
+    <h4>Meus Empréstimos</h4>
+    <table class="table" ng-if="livros">
+        <thead>
+        <td>#</td>
+        <td>Autor</td>
+        <td>Título</td>
+        <td>Data de Empréstimo</td>
+        <td>Data de Devolução</td>
+        </thead>
+        <tbody>
         <tr ng-repeat="livro in livros" ng-class="hoje >= livro.dataDevolucao ? 'alert-danger' : ''">
             <td>{{livro.codigo}}</td>
             <td>{{livro.autor}}</td>
@@ -18,6 +19,7 @@
             <td>{{livro.dataEmprestimo}}</td>
             <td>{{livro.dataDevolucao | date : "dd/MM/yyyy"}}</td>
         </tr>
-    </tbody>
-</table>
-<p class="alert alert-info" ng-if="livros.length == 0">Você não possui nenhum empréstimo.</p>
+        </tbody>
+    </table>
+    <p class="alert alert-info" ng-if="livros.length == 0">Você não possui nenhum empréstimo.</p>
+</div>

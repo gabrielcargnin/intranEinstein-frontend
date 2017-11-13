@@ -1,0 +1,27 @@
+<div class="container">
+    <p class="mensagem-erro alert alert-danger text-center" ng-show="invalido">E-mail ou senha incorreta.</p>
+    <div class="login-box">
+        <form novalidate name="formulario" id="login-form" class="login-form" ng-submit="login()">
+            <img src="images/cropped-icon-for-site-470x470.png" alt="Einstein Floripa Logo"/>
+            <input class="input-text" type="text" id="email" required name="email" ng-model="acesso.username">
+            <span class="floating-label">Email</span>
+            <span class="errors" ng-show="formulario.$submitted && formulario.email.$error.required && !enviado">Você precisa informar o email.</span>
+
+            <input class="input-text" type="password" id="password" required name="password"
+                   ng-model="acesso.password">
+            <span class="floating-label">Senha</span>
+            <span class="errors" ng-show="formulario.$submitted && formulario.password.$error.required && !enviado">Você precisa informar a senha.</span>
+            <div class="form-group text-center">
+                <span><a href="">Esqueci minha senha</a></span>
+            </div>
+            <div>
+                <button ng-show="!loading" type="submit" class="btn">Entrar</button>
+                <div ng-show="loading" class="btn buttonload">
+                    <i class="fa fa-circle-o-notch fa-spin"></i>Entrando...
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+</div>

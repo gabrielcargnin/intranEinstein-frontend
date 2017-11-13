@@ -2,16 +2,16 @@
   "name": "intranEinstein",
   "version": "1.0.0",
   "description": "",
-  "scripts": {
-  },
+  "scripts": {},
   "devDependencies": {
+    "angular": "1.3.15",
+    "angular-animate": "1.3.15",
+    "angular-route": "1.3.15",
+    "angular-resource": "1.3.15",
+    "angular-storage": "0.0.15",
+    "bootstrap": "3.3.7",
     "jquery": "3.2.1",
     "lodash": "^4.17.4",
-    "moment": "2.18.1",
-    "angular": "1.3.6",
-    "angular-animate": "1.3.6",
-    "angular-route": "1.3.6",
-    "angular-resource": "1.3.6",
-    "bootstrap": "3.3.7"
+    "moment": "2.18.1"
   }
 }
