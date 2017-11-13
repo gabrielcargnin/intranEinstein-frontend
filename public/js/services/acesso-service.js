@@ -6,7 +6,7 @@ angular.module('intranet').factory('AcessoService', function ($resource, $q, sto
     var client_secret = 'e3wxnL5J6OSCCs54YZfNdHBpdFzlpY0K1YHAeAMA';
     var scope = '*';
 
-    var loginResource = $resource('http://localhost:8000/oauth/token', {}, {
+    var loginResource = $resource('http://dev.einsteinfloripa.xyz/oauth/token', {}, {
         save: {
             method: 'POST',
             header: {
