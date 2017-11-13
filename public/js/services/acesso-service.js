@@ -1,10 +1,10 @@
 angular.module('intranet').factory('AcessoService', function ($resource, $q, store) {
 
 
-    const grant_type = 'password';
-    const client_id = '4';
-    const client_secret = 'e3wxnL5J6OSCCs54YZfNdHBpdFzlpY0K1YHAeAMA';
-    const scope = '*';
+    var grant_type = 'password';
+    var client_id = '4';
+    var client_secret = 'e3wxnL5J6OSCCs54YZfNdHBpdFzlpY0K1YHAeAMA';
+    var scope = '*';
 
     var loginResource = $resource('http://localhost:8000/oauth/token', {}, {
         save: {

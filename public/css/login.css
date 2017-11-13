@@ -1,11 +1,13 @@
-html, body {
+body,
+html {
     height: 100%;
     width: 100%;
-    color: #357fb2;
+    color: #357fb2
 }
 
-nav, footer {
-    display: none;
+footer,
+nav {
+    display: none
 }
 
 .login-box {
@@ -13,28 +15,28 @@ nav, footer {
     width: 80%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
 }
 
 .btn {
     width: 100%;
     text-transform: uppercase;
     background-color: #367fb3;
-    color: #ffffff;
-    font-weight: bold;
-
+    color: #fff;
+    font-weight: 700
 }
 
-textarea:focus, input:focus {
-    outline: none;
+input:focus,
+textarea:focus {
+    outline: 0
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
 input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
+input:-webkit-autofill:hover {
     transition: background-color 5000s ease-in-out 0s;
-    -webkit-text-fill-color: #367fb3;;
+    -webkit-text-fill-color: #367fb3
 }
 
 input:focus + .floating-label,
@@ -43,23 +45,23 @@ input:not(:focus):valid + .floating-label {
     bottom: 10px;
     left: 0;
     font-size: 11px;
-    opacity: 1;
+    opacity: 1
 }
 
 input:focus,
 input:not(:focus):valid {
-    border-bottom: 3px solid rgb(53, 127, 178);
+    border-bottom: 3px solid #357fb2
 }
 
 .input-text {
     font-size: 20px;
     height: 35px;
-    background: transparent;
+    background: 0 0;
     border: none;
-    border-bottom: 1px solid rgb(53, 127, 178);
+    border-bottom: 1px solid #357fb2;
     box-shadow: none;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 20px
 }
 
 .floating-label {
@@ -67,7 +69,7 @@ input:not(:focus):valid {
     pointer-events: none;
     left: 20px;
     top: -50px;
-    transition: 0.2s ease all;
+    transition: .2s ease all
 }
 
 img {
@@ -76,88 +78,89 @@ img {
     position: relative;
     left: 50%;
     top: -30px;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0)
 }
 
 .fa {
     margin-left: -12px;
-    margin-right: 8px;
+    margin-right: 8px
 }
 
-
-@media (min-width: 768px ) {
-    html, body {
-        background: none;
+@media (min-width: 768px) {
+    body,
+    html {
+        background: 0 0
     }
 
     .login-box {
         width: 60%;
         border-radius: 10px;
-        transform: translate(-50%, -60%);
+        transform: translate(-50%, -60%)
     }
 
     .login-form {
-        padding: 7%;
+        padding: 7%
     }
 }
 
-.errors{
+.errors {
     color: #ff7100;
-    font-size: 12px;
+    font-size: 12px
 }
 
 @media (min-width: 1000px) {
-    html, body {
-    background: url("../../public/images/estrada-rural-no-campo.jpg") no-repeat center;
+    body,
+    html {
+        background: url(../../public/images/estrada-rural-no-campo.jpg) no-repeat center;
         background-size: cover;
-        color: white;
+        color: #fff
     }
-    
+
     .login-box {
         width: 400px;
-        background-color: rgba(0, 0, 0, 0.48);
-        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, .48);
+        transform: translate(-50%, -50%)
     }
 
     input:focus,
     input:not(:focus):valid {
-        border-bottom: 3px solid rgb(255, 255, 255);
+        border-bottom: 3px solid #fff
     }
 
     input:-webkit-autofill,
-    input:-webkit-autofill:hover,
+    input:-webkit-autofill:active,
     input:-webkit-autofill:focus,
-    input:-webkit-autofill:active {
+    input:-webkit-autofill:hover {
         transition: background-color 5000s ease-in-out 0s;
-        -webkit-text-fill-color: #ffffff;;
+        -webkit-text-fill-color: #fff
     }
 
     .input-text {
-        border-bottom: 1px solid rgb(255, 255, 255);
+        border-bottom: 1px solid #fff
     }
 
     .login-form {
-        padding: 7%;
+        padding: 7%
     }
 
     img {
         display: block;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        background: url("../../public/images/logo-branca.png") no-repeat center;
+        background: url(../../public/images/logo-branca.png) no-repeat center;
         background-size: cover;
         width: 300px;
         height: 300px;
-        padding-left: 300px;
+        padding-left: 300px
     }
 
     .btn {
-        background-color: white;
-        color: black;
+        background-color: #fff;
+        color: #000
     }
 
     a {
-        color: white;
+        color: #fff
     }
 
     .mensagem-erro {
@@ -165,28 +168,21 @@ img {
         margin-top: 120px;
         right: 100%;
         animation: mensagem 7s;
-        width: 400px;
-        /*animation-name: mensagem;*/
-        /*animation-duration: 5s;*/
+        width: 400px
     }
 
     @keyframes mensagem {
         8% {
             right: 50%;
-            transform: translate(50%, 0);
+            transform: translate(50%, 0)
         }
-
         50% {
             right: 50%;
-            transform: translate(50%, 0);
+            transform: translate(50%, 0)
         }
-
         60% {
             right: 100%;
-            transform: translate(0, 0);
+            transform: translate(0, 0)
         }
     }
-
-
-
 }
