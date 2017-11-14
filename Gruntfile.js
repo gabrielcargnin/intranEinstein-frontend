@@ -1,6 +1,9 @@
 module.exports = function (grunt) {
 
     grunt.initConfig({
+
+        clean: ['build/'],
+
         concat: {
             js: {
                 src: ['public/js/*.js', 'public/js/**/*.js'],
@@ -68,12 +71,26 @@ module.exports = function (grunt) {
                     dest: "build/css/login.css"
                 }]
             }
+        },
+
+        watch: {
+            scripts: {
+                files: ['**/*.js', '**/*.css'],
+                tasks: ['clean', 'concat', 'copy', 'uglify', 'cssmin'],
+                options: {
+                    spawn: false
+                }
+            }
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
+    grunt.registerTask('default', ['clean', 'concat', 'copy', 'uglify', 'cssmin']);
 
 };

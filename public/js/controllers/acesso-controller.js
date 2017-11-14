@@ -10,13 +10,12 @@ angular.module('intranet').controller('AcessoController', function ($scope, Aces
             AcessoService.login($scope.acesso)
                 .then(function (response) {
                     store.set('access_token', response.dados.access_token);
-                    console.log(store.get('access_token'));
                     $location.path('/biblioteca');
                 })
                 .catch(function (erro) {
                     $scope.invalido = true;
                     $scope.loading = false;
-                    console.log(erro)
+                    console.log(erro);
                     $scope.formulario.$submitted = false;
                 });
         }

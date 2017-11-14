@@ -24,6 +24,7 @@ angular.module('intranet',['ngRoute', 'ngResource', 'angular-storage', 'routeSty
 
     $routeProvider.when('/biblioteca', {
         templateUrl: 'partials/biblioteca.html',
-        css: 'css/inicio.css'
+        controller: 'LivrosController',
+        css: ['css/biblioteca.css', 'css/inicio.css']
     });
 });

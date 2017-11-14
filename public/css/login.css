@@ -12,7 +12,7 @@ nav {
 
 .login-box {
     position: absolute;
-    width: 80%;
+    width: 65%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%)
@@ -28,7 +28,7 @@ nav {
 
 input:focus,
 textarea:focus {
-    outline: 0
+    outline: 0;
 }
 
 input:-webkit-autofill,
@@ -84,6 +84,30 @@ img {
 .fa {
     margin-left: -12px;
     margin-right: 8px
+}
+
+.mensagem-erro {
+    position: absolute;
+    margin-top: 120px;
+    right: 100%;
+    animation: mensagem 7s;
+    width: 400px;
+    z-index: 1;
+}
+
+@keyframes mensagem {
+    8% {
+        right: 50%;
+        transform: translate(50%, 0)
+    }
+    50% {
+        right: 50%;
+        transform: translate(50%, 0)
+    }
+    60% {
+        right: 100%;
+        transform: translate(0, 0)
+    }
 }
 
 @media (min-width: 768px) {
@@ -163,26 +187,4 @@ img {
         color: #fff
     }
 
-    .mensagem-erro {
-        position: absolute;
-        margin-top: 120px;
-        right: 100%;
-        animation: mensagem 7s;
-        width: 400px
-    }
-
-    @keyframes mensagem {
-        8% {
-            right: 50%;
-            transform: translate(50%, 0)
-        }
-        50% {
-            right: 50%;
-            transform: translate(50%, 0)
-        }
-        60% {
-            right: 100%;
-            transform: translate(0, 0)
-        }
-    }
 }
