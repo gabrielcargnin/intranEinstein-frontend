@@ -8,12 +8,22 @@ angular.module('intranet').controller('LivrosController', function ($scope, Livr
         });
 
         EmprestimoService.getEmprestimos().then(function (response) {
-            $scope.meuLivros = response.emprestimos;
+            $scope.hoje = moment().format('DD-MM-YYYY');
+            $scope.meusLivros = response.emprestimos;
+            console.log(response.emprestimos);
         }).catch(function (error) {
             console.log(error.message);
         });
 
     }
+
+    $scope.emprestimo = function (livro) {
+        EmprestimoService.emprestimo(livro.id_livro).then(function (response) {
+            $scope.mensagem = response.message;
+        }).catch(function (error) {
+            $scope.mensagem = error.message;
+        });
+    };
 
     init();
 

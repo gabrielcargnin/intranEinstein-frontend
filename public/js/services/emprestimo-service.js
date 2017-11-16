@@ -3,7 +3,7 @@ angular.module('intranet').factory('EmprestimoService', function ($resource, $q)
 
     function getEmprestimos() {
         return $q(function (resolve, reject) {
-            livroResource.query({idUsuario: 4} ,function (dados) {
+            livroResource.query(function (dados) {
                 resolve({
                     emprestimos: dados
                 });
@@ -15,7 +15,22 @@ angular.module('intranet').factory('EmprestimoService', function ($resource, $q)
         });
     }
 
+    function emprestimo(idLivro) {
+        return $q(function (resolve, reject) {
+            livroResource.save({id_livro : idLivro}, function (dados) {
+                resolve({
+                    message: dados
+                });
+            }, function (erro) {
+                reject({
+                    message: erro
+                });
+            });
+        });
+    }
+
     return {
-        getEmprestimos : getEmprestimos
+        getEmprestimos : getEmprestimos,
+        emprestimo : emprestimo
     }
 });

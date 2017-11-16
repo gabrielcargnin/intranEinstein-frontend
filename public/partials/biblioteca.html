@@ -1,7 +1,9 @@
 <div class="container">
+
+    <p class="mensagem alert alert-danger text-center" ng-show="mensagem">{{mensagem}}</p>
     <h2>BibliotecEinstein</h2>
     <p>Bem-vindo à Biblioteca, jovem Einsteiniano!</p>
-
+{{hoje}}
     <h4>Meus Empréstimos</h4>
     <table class="table" ng-if="meusLivros">
         <thead>
@@ -12,12 +14,12 @@
         <td>Data de Devolução</td>
         </thead>
         <tbody>
-        <tr ng-repeat="livro in meusLivros" ng-class="hoje >= livro.dataDevolucao ? 'alert-danger' : ''">
+        <tr ng-repeat="livro in meusLivros" ng-class="hoje >= livro.data_devolucao ? 'alert-danger' : ''">
             <td>{{livro.id_livro}}</td>
             <td>{{livro.autor}}</td>
             <td>{{livro.titulo}}</td>
             <td>{{livro.dataEmprestimo}}</td>
-            <td>{{livro.dataDevolucao | date : "dd/MM/yyyy"}}</td>
+            <td>{{livro.data_devolucao | date : "dd/MM/yyyy"}}</td>
         </tr>
         </tbody>
     </table>
@@ -39,6 +41,7 @@
             <td>{{livro.titulo}}</td>
             <td>{{livro.colecao}}</td>
             <td>{{livro.materia}}</td>
+            <td ng-click="emprestimo(livro)">Pegar emprestado</td>
         </tr>
         </tbody>
     </table>

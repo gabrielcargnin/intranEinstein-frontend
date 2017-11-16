@@ -21,7 +21,8 @@ module.exports = function (grunt) {
                     'node_modules/angular-animate/angular-animate.min.js',
                     'node_modules/angular-resource/angular-resource.min.js',
                     'node_modules/angular-route/angular-route.min.js',
-                    'node_modules/angular-storage/dist/angular-storage.min.js'
+                    'node_modules/angular-storage/dist/angular-storage.min.js',
+                    'node_modules/moment/min/moment.min.js'
                 ],
                 dest: 'build/lib.js'
             }
