@@ -9,7 +9,7 @@ angular.module('intranet').factory('EmprestimoService', function ($resource, $q)
                 });
             }, function (erro) {
                 reject({
-                    message: erro
+                    dados: erro
                 });
             });
         });
@@ -23,7 +23,7 @@ angular.module('intranet').factory('EmprestimoService', function ($resource, $q)
                 });
             }, function (erro) {
                 reject({
-                    message: erro
+                    dados: erro
                 });
             });
         });

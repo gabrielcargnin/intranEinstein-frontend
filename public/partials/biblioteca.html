@@ -3,9 +3,8 @@
     <p class="mensagem alert alert-danger text-center" ng-show="mensagem">{{mensagem}}</p>
     <h2>BibliotecEinstein</h2>
     <p>Bem-vindo à Biblioteca, jovem Einsteiniano!</p>
-{{hoje}}
     <h4>Meus Empréstimos</h4>
-    <table class="table" ng-if="meusLivros">
+    <table class="table" ng-if="meusLivros.tamanho > 0">
         <thead>
         <td>#</td>
         <td>Autor</td>
@@ -18,15 +17,15 @@
             <td>{{livro.id_livro}}</td>
             <td>{{livro.autor}}</td>
             <td>{{livro.titulo}}</td>
-            <td>{{livro.dataEmprestimo}}</td>
+            <td>{{livro.data_emprestimo | date : "dd/MM/yyyy"}}</td>
             <td>{{livro.data_devolucao | date : "dd/MM/yyyy"}}</td>
         </tr>
         </tbody>
     </table>
-    <p class="alert alert-info" ng-if="!meusLivros">Você não possui nenhum empréstimo.</p>
+    <p class="alert alert-info" ng-if="meusLivros.tamanho == 0">Você não possui nenhum empréstimo.</p>
 
     <h4>Livros disponíveis</h4>
-    <table class="table" ng-if="livros">
+    <table class="table" ng-if="livros.tamanho > 0">
         <thead>
         <td>#</td>
         <td>Autor</td>
@@ -45,5 +44,5 @@
         </tr>
         </tbody>
     </table>
-    <p class="alert alert-info" ng-if="!livros">Não existem livros disponíveis para empréstimo.</p>
+    <p class="alert alert-info" ng-if="livros.tamanho == 0">Não existem livros disponíveis para empréstimo.</p>
 </div>

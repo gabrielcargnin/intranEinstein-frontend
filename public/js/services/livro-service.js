@@ -9,7 +9,7 @@ angular.module('intranet').factory('LivroService', function ($resource, $q) {
                 });
             }, function (erro) {
                 reject({
-                    message: erro
+                    dados: erro
                 });
             });
         });

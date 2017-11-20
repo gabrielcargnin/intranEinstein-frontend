@@ -5,6 +5,10 @@ html {
     color: #357fb2
 }
 
+nav, footer {
+   display: none;
+}
+
 .login-box {
     position: absolute;
     width: 65%;
