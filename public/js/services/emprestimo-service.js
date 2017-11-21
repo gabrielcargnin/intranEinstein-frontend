@@ -19,7 +19,7 @@ angular.module('intranet').factory('EmprestimoService', function ($resource, $q)
         return $q(function (resolve, reject) {
             livroResource.save({id_livro : idLivro}, function (dados) {
                 resolve({
-                    message: dados
+                    dados: dados
                 });
             }, function (erro) {
                 reject({

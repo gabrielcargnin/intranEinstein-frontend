@@ -1,9 +1,6 @@
 h4 {
     margin-bottom: 20px;
-}
-
-nav, footer {
-    display: block;
+    text-transform: uppercase;
 }
 
 .mensagem {
@@ -28,4 +25,9 @@ nav, footer {
         right: 100%;
         transform: translate(0, 0)
     }
+}
+
+thead:first-child{
+    background-color: #f7f7f7;
+    border-bottom: 2px solid #c0c0c0;
 }

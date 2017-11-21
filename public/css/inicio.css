@@ -1,3 +1,19 @@
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+}
+footer, .push {
+    height: 50px; /* .push must be the same height as .footer */
+}
+
 .navbar-brand {
     margin-left: 10px;
     background: url(../images/cropped-icon-for-site-470x470.png) no-repeat center;
@@ -6,15 +22,9 @@
     height: 50px
 }
 
-nav, footer {
-    display: block;
-}
 footer {
-    position: absolute;
-    bottom: 0;
-    height: 50px;
-    text-align: center;
     width: 100%;
+    text-align: center;
     background-color: #f8f8f8;
     font-weight: 700;
     text-transform: uppercase;
@@ -28,8 +38,4 @@ footer span {
 footer p {
     margin-top: 5px;
     margin-bottom: 0;
-}
-
-thead {
-    font-weight: 700
 }

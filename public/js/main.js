@@ -1,4 +1,4 @@
-angular.module('intranet',['ngRoute', 'ngResource', 'angular-storage', 'routeStyles']).config(function ($routeProvider) {
+angular.module('intranet',['ngRoute', 'ngResource', 'angular-storage', 'routeStyles', 'diretivas']).config(function ($routeProvider) {
 
 
     $routeProvider.when('/', {
