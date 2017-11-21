@@ -1,46 +1,60 @@
-<div class="container">
-    <h2>BibliotecEinstein</h2>
-    <p>Bem-vindo à Biblioteca, jovem Einsteiniano!</p>
+<div class="wrapper">
+    <meu-menu></meu-menu>
+    <div class="container">
 
-    <h4>Meus Empréstimos</h4>
-    <table class="table" ng-if="meusLivros">
-        <thead>
-        <td>#</td>
-        <td>Autor</td>
-        <td>Título</td>
-        <td>Data de Empréstimo</td>
-        <td>Data de Devolução</td>
-        </thead>
-        <tbody>
-        <tr ng-repeat="livro in meusLivros" ng-class="hoje >= livro.dataDevolucao ? 'alert-danger' : ''">
-            <td>{{livro.id_livro}}</td>
-            <td>{{livro.autor}}</td>
-            <td>{{livro.titulo}}</td>
-            <td>{{livro.dataEmprestimo}}</td>
-            <td>{{livro.dataDevolucao | date : "dd/MM/yyyy"}}</td>
-        </tr>
-        </tbody>
-    </table>
-    <p class="alert alert-info" ng-if="!meusLivros">Você não possui nenhum empréstimo.</p>
+        <p class="mensagem text-center alert {{classe}}" ng-show="mensagem">{{mensagem}}</p>
+        <h2>BibliotecEinstein</h2>
+        <p>Bem-vindo à Biblioteca, jovem Einsteiniano!</p>
+        <h4>Meus Empréstimos</h4>
+        <div class="panel panel-default" ng-if="meusLivros.length > 0">
+            <table class="table">
+                <thead class="cabecalho">
+                <tr>
+                    <td>Autor</td>
+                    <td>Título</td>
+                    <td>Data de Empréstimo</td>
+                    <td>Data de Devolução</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="livro in meusLivros" ng-class="hoje >= livro.data_devolucao ? 'alert-danger' : ''">
+                    <td>{{livro.autor}}</td>
+                    <td>{{livro.titulo}}</td>
+                    <td>{{livro.data_emprestimo | date : "dd/MM/yyyy"}}</td>
+                    <td>{{livro.data_devolucao | date : "dd/MM/yyyy"}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="alert alert-info" ng-if="meusLivros.length == 0">Você não possui nenhum empréstimo.</p>
 
-    <h4>Livros disponíveis</h4>
-    <table class="table" ng-if="livros">
-        <thead>
-        <td>#</td>
-        <td>Autor</td>
-        <td>Título</td>
-        <td>Coleção</td>
-        <td>Matéria</td>
-        </thead>
-        <tbody>
-        <tr ng-repeat="livro in livros" ng-if="livro.disponibilidade == 1">
-            <td>{{livro.id_livro}}</td>
-            <td>{{livro.autor}}</td>
-            <td>{{livro.titulo}}</td>
-            <td>{{livro.colecao}}</td>
-            <td>{{livro.materia}}</td>
-        </tr>
-        </tbody>
-    </table>
-    <p class="alert alert-info" ng-if="!livros">Não existem livros disponíveis para empréstimo.</p>
+        <h4>Livros disponíveis</h4>
+        <div class="panel panel-default" ng-if="livros.length > 0">
+            <table class="table">
+                <thead class="cabecalho">
+                <tr>
+                    <td>#</td>
+                    <td>Autor</td>
+                    <td>Título</td>
+                    <td>Coleção</td>
+                    <td>Matéria</td>
+                    <td>Ação</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="livro in livros">
+                    <td>{{livro.id_livro}}</td>
+                    <td>{{livro.autor}}</td>
+                    <td>{{livro.titulo}}</td>
+                    <td>{{livro.colecao}}</td>
+                    <td>{{livro.materia}}</td>
+                    <td ng-click="emprestimo(livro)">Pegar emprestado</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="alert alert-info" ng-if="livros.length == 0">Não existem livros disponíveis para empréstimo.</p>
+    </div>
+    <div class="push"></div>
 </div>
+<meu-footer></meu-footer>
