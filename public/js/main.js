@@ -1,6 +1,5 @@
 angular.module('intranet',['ngRoute', 'ngResource', 'angular-storage', 'routeStyles', 'diretivas']).config(function ($routeProvider) {
 
-
     $routeProvider.when('/', {
         templateUrl: 'partials/login.html',
         controller: 'AcessoController',

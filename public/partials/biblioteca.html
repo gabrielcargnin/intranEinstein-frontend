@@ -29,32 +29,44 @@
         <p class="alert alert-info" ng-if="meusLivros.length == 0">Você não possui nenhum empréstimo.</p>
 
         <h4>Livros disponíveis</h4>
-        <div class="panel panel-default" ng-if="livros.length > 0">
-            <table class="table">
-                <thead class="cabecalho">
-                <tr>
-                    <td>#</td>
-                    <td>Autor</td>
-                    <td>Título</td>
-                    <td>Coleção</td>
-                    <td>Matéria</td>
-                    <td>Ação</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="livro in livros">
-                    <td>{{livro.id_livro}}</td>
-                    <td>{{livro.autor}}</td>
-                    <td>{{livro.titulo}}</td>
-                    <td>{{livro.colecao}}</td>
-                    <td>{{livro.materia}}</td>
-                    <td ng-click="emprestimo(livro)">Pegar emprestado</td>
-                </tr>
-                </tbody>
-            </table>
+        <div ng-if="livros.length > 0">
+            <div class="panel panel-default">
+                <table class="table">
+                    <thead class="cabecalho">
+                    <tr>
+                        <td>#</td>
+                        <td>Autor</td>
+                        <td>Título</td>
+                        <td>Coleção</td>
+                        <td>Matéria</td>
+                        <td>Ação</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="livro in livros" class="form">
+                        <td>{{livro.id_livro}}</td>
+                        <td>{{livro.autor}}</td>
+                        <td>{{livro.titulo}}</td>
+                        <td>{{livro.colecao}}</td>
+                        <td>{{livro.materia}}</td>
+                        <!--<td><div class="emprestimo" ng-click="emprestimo(livro)"></div></td>-->
+                        <td><input type="checkbox" class="checkbox" ng-model="livro.selecionado" ng-click="checkbox()"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <input type="button" class="btn btn-info" value="Emprestar" ng-disabled="desabilitado" ng-click="confirmacao()">
         </div>
         <p class="alert alert-info" ng-if="livros.length == 0">Não existem livros disponíveis para empréstimo.</p>
     </div>
     <div class="push"></div>
+</div>
+<div class="overlay" ng-show="emprestar">
+    <div class="confirmacao">
+        <h5>Deseja mesmo tomar emprestado o(s) livro(s): </h5>
+        <p ng-repeat="livro in livrosSelecionados"><b>Autor:</b> {{livro.autor}} - <b>Título:</b> {{livro.titulo}}</p>
+        <div class="btn btn-info" ng-click="emprestimo()">Confirmar</div>
+        <div class="btn btn-default" ng-click="cancelar()">Cancelar</div>
+    </div>
 </div>
 <meu-footer></meu-footer>

@@ -15,9 +15,9 @@ angular.module('intranet').factory('EmprestimoService', function ($resource, $q)
         });
     }
 
-    function emprestimo(idLivro) {
+    function emprestimo(ids) {
         return $q(function (resolve, reject) {
-            livroResource.save({id_livro : idLivro}, function (dados) {
+            livroResource.save({ids : ids}, function (dados) {
                 resolve({
                     dados: dados
                 });
