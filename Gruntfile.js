@@ -2,7 +2,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
 
-        clean: ['build/'],
+        clean: ['build/*'],
 
         concat: {
             js: {
